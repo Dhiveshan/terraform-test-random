@@ -34,7 +34,7 @@ locals {
     prefix = length(var.prefixes) == 0? null : join("-",var.prefixes)
 }
 
-resource "random_pet" "pet" {
+resource "random_pet" "pets" {
    count = var.number
    length = var.length
    prefix = local.prefix
@@ -47,5 +47,5 @@ resource "random_pet" "pet" {
    } 
 }
 output "names" {
-    value = [for pet in random_pet.pet : pet.id]
+    value = [for pet in random_pet.pets : pet.id]
 }
