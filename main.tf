@@ -42,7 +42,7 @@ resource "random_pet" "pets" {
    lifecycle {
     precondition {
         condition = local.prefix != ""
-        error_message = "prefix can't be an empty string! hehe x4000..."
+        error_message = "prefix can't be an empty string! hehe x4000123..."
     }
    } 
 }
