@@ -46,6 +46,11 @@ resource "random_pet" "pets" {
     }
   }
 }
+
+resource "terraform_data" "apply_trigger" {
+  input = plantimestamp()
+}
+
 output "names" {
   value = [for pet in random_pet.pets : pet.id]
 }
